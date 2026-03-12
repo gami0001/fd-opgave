@@ -1,0 +1,42 @@
+---
+import Logo from "../icons/AskExperts.svg";
+import "../styles/tokens.css";
+---
+
+<footer class="breakout">
+  <div class="footer_flex">
+    <a href="/">
+      <Logo />
+    </a>
+
+    <p>©2025 Consultalk. All rights reserved</p>
+
+    <p>Terms of Service | Privacy Policy</p>
+  </div>
+</footer>
+
+<style>
+  @layer components {
+    .footer_flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+
+      a {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 120px;
+          height: auto;
+        }
+      }
+
+      p {
+        font-size: var(--step--2);
+        color: var(--color-text-muted);
+      }
+    }
+  }
+</style>
