@@ -10,7 +10,8 @@ body {
 }
 
 header,
-footer {
+footer,
+.newsletter {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: full;
