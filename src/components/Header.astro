@@ -24,35 +24,37 @@ import "../styles/tokens.css";
 </header>
 
 <style>
-  .header_flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-
-    a {
+  @layer components {
+    .header_flex {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
 
-      svg {
-        width: 120px;
-        height: auto;
-      }
-    }
-
-    nav {
-      ul {
+      a {
         display: flex;
-        list-style: none;
-        gap: 30px;
+        align-items: center;
 
-        li {
-          a {
-            text-decoration: none;
-            color: var(--color-neutrals-50);
-            font-weight: 500;
-            transition: color 0.3s;
+        svg {
+          width: 120px;
+          height: auto;
+        }
+      }
+
+      nav {
+        ul {
+          display: flex;
+          list-style: none;
+          gap: 30px;
+
+          li {
+            a {
+              text-decoration: none;
+              color: var(--color-neutrals-50);
+              font-weight: 500;
+              transition: color 0.3s;
+            }
           }
         }
       }
