@@ -4,30 +4,32 @@ import Logo from "../icons/AskExperts.svg";
 import "../styles/tokens.css";
 ---
 
-<header>
-  <a href="/">
-    <Logo />
-  </a>
+<header class="breakout">
+  <div class="header_flex">
+    <a href="/">
+      <Logo />
+    </a>
 
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Case Study</a></li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Case Study</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
 
-  <Button text="Login" />
+    <Button text="Login" />
+  </div>
 </header>
 
 <style>
-  header {
+  .header_flex {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-    background-color: var(--color-blue-700);
 
     a {
       display: flex;
