@@ -1,27 +1,31 @@
 ---
 import employees from "../data/employees.json";
+import facebook from "../icons/facebook.svg";
+import instagram from "../icons/instagram.svg";
 ---
 
 <section class="team">
   {
     employees.map((employee) => (
-      <article class="card">
-        <img class="card-img" src={employee.img} alt={employee.name} />
+      <div class="card-wrapper">
+        <article class="card">
+          <img class="card-img" src={employee.img} alt={employee.name} />
 
-        <div class="card-content">
-          <h3>{employee.name}</h3>
-          <h4 class="title">{employee.title}</h4>
-          <p>{employee.description}</p>
+          <div class="card-content">
+            <h3>{employee.name}</h3>
+            <h4 class="title">{employee.title}</h4>
+            <p>{employee.description}</p>
 
-          <div class="socials">
-            {employee.social_links.map((social) => (
-              <a href={social.url} aria-label={social.platform}>
-                {social.icon}
-              </a>
-            ))}
+            <div class="socials">
+              {employee.social_links.map((social) => (
+                <a href={social.url} aria-label={social.platform}>
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     ))
   }
 </section>
