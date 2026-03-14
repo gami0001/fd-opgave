@@ -1,0 +1,124 @@
+---
+import FaqData from "../data/faq.json";
+import PlusIkon from "../icons/plus.svg";
+---
+
+<section class="faq">
+  <div class="faq-container">
+    <div class="faq-label">
+      <p>FAQ</p>
+      <h2>Customer Questions</h2>
+    </div>
+    {
+      FaqData.faq.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <span class="question">{item.question}</span>
+            <PlusIkon />
+          </summary>
+
+          <div class="answer">
+            {item.answer.split("\n\n").map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .faq-label {
+      display: flex;
+      flex-direction: column; /* lægger FAQ øverst og Customer Questions under */
+      align-items: center; /* centrerer indholdet horisontalt */
+      text-align: center; /* centrerer teksten */
+
+      h2 {
+        font-size: var(--step-3);
+        font-weight: 650;
+      }
+    }
+
+    .faq {
+      padding-inline: var(--space-xl);
+      background: var(--color-surface-secondary);
+      width: max(900px, 100%);
+
+      .faq-container {
+        margin-inline: auto; /* <-- centrerer */
+
+        padding: var(--space-2xl);
+      }
+    }
+
+    details {
+      color: hsl(190 30% 12%);
+      border-bottom: 1px solid #dadada;
+
+      summary {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        color: #181818;
+        text-wrap: revert;
+        user-select: none;
+        cursor: pointer;
+
+        &::marker,
+        &::-webkit-details-marker {
+          content: "";
+          display: none;
+        }
+
+        span {
+          border: none;
+          text-align: start;
+          padding: 0;
+          inline-size: 100%;
+          padding-block: 1rlh;
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+
+          svg {
+            inline-size: auto;
+            height: 1lh;
+            flex-shrink: 0;
+            /**************************************************************************** */
+            transform: rotate(var(--r, 0));
+            transition: transform 0.3s ease;
+            /**************************************************************************** */
+          }
+        }
+      }
+      /**************************************************************************** */
+      &[open] {
+        --r: z 90deg;
+      }
+      [open] summary::after {
+        content: "–";
+      }
+      /**************************************************************************** */
+      .answer {
+        color: #595566;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+
+        > * + * {
+          margin-top: 1em;
+        }
+
+        :last-child {
+          padding-block-end: 1rlh;
+        }
+
+        .link-block {
+          display: block;
+        }
+      }
+    }
+  }
+</style>
