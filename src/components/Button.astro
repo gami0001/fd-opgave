@@ -1,8 +1,17 @@
 ---
-const { text = "Button", type = "button", variant = "default" } = Astro.props;
+const {
+  text = "Button",
+  type = "button",
+  variant = "default",
+  ...props
+} = Astro.props;
 ---
 
-<button type={type} class={`btn ${variant === "yellow" ? "btn-yellow" : ""}`}>
+<button
+  type={type}
+  class={`btn ${variant === "yellow" ? "btn-yellow" : ""}`}
+  {...props}
+>
   {text}
 </button>
 
