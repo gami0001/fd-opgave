@@ -1,0 +1,48 @@
+---
+import "../styles/tokens.css";
+import Button from "./Button.astro";
+---
+
+<article>
+  <div class="dash-wrapper">
+    <h2>Dashboard Login</h2>
+    <form>
+      <div>
+        <p>Email adress</p>
+        <input type="email" placeholder=" " />
+      </div>
+      <div>
+        <p>Password</p>
+        <input type="password" placeholder=" " />
+      </div>
+    </form>
+    <Button text="Go to dashboard" variant="yellow" />
+  </div>
+</article>
+
+<style>
+  @layer components {
+    .dash-wrapper {
+      background-color: var(--color-neutrals-200);
+      padding: 20px 30px;
+      border-radius: var(--border-radius-1);
+
+      form {
+        display: grid;
+        gap: 1rlh;
+      }
+    }
+    h2 {
+      font-size: var(--step-1);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: var(--step--2);
+    }
+
+    input {
+      border-radius: var(--border-radius-1);
+    }
+  }
+</style>
