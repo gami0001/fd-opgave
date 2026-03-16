@@ -32,5 +32,58 @@ import instagram from "../icons/instagram.svg";
 
 <style>
   @layer component {
+    .team {
+      grid-column: content-start / content-end;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 2rem;
+
+      .card {
+        container-type: inline-size;
+        display: grid;
+        grid: subgrid/subgrid;
+        grid-row: span 5;
+      }
+
+      .card-img {
+        border-radius: var(--border-radius-1);
+        width: 100%;
+        display: block;
+      }
+
+      .card-content {
+        text-align: center;
+      }
+
+      h3 {
+        font-size: var(--step-0);
+        font-weight: 600;
+      }
+
+      h4 {
+        background-color: var(--color-neutrals-900);
+        color: var(--color-neutrals-50);
+        border-radius: var(--border-radius-1);
+      }
+    }
+
+    @container card (min-width: 300px) {
+      .card {
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+      }
+
+      .card-img {
+        grid-row: span 3;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        text-align: left;
+      }
+    }
   }
 </style>
