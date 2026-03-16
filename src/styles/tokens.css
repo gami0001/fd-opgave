@@ -55,5 +55,6 @@
 
   /* ==== Border Radii ==== */
   --border-radius-1: 15px;
+  --border-radius-1: 42px;
   --border-radius-2: 45px;
 }

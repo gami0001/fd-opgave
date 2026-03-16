@@ -6,21 +6,28 @@ import Layers from "../icons/layers.svg";
 import Globe from "../icons/globe.svg";
 import Bars from "../icons/Bars.svg";
 import ArrowRight from "../icons/arrow--right.svg";
+import "../styles/tokens.css";
 ---
 
 <section class="values">
   <div>
-    <p class="eyebrow">Growing with our clients</p>
-    <h2>Our core values & principles</h2>
-    <p class="subtext">
-      Capitalize on low hanging fruit to identify a ballpark value added
-      activity beta test. Override the digital divide with additional from
-      DevOps.
-    </p>
+    <div class="values_top">
+      <div class="values_text">
+        <p class="eyebrow">Growing with our clients</p>
+        <h2>Our core values & principles</h2>
+        <p class="subtext">
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+      </div>
 
-    <Button text="Get in touch" />
+      <div class="values_button">
+        <Button text="Get in touch" />
+      </div>
+    </div>
 
-    <div class="ValuesCards_Grid">
+    <div class="ValuesCards_flex">
       <ValuesCards
         icon={Layers}
         title="Creative Ideas"
@@ -53,7 +60,44 @@ import ArrowRight from "../icons/arrow--right.svg";
 </section>
 
 <style>
+  .values {
+    background: var(--color-neutrals-900);
+    color: var(--color-neutrals-50);
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+
+    padding-block: 4rem;
+  }
+
   .values > * {
     grid-column: content;
+  }
+
+  .values_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 3vw, 3rem);
+    margin-bottom: 3rem;
+  }
+
+  .values_text {
+    text-align: left;
+  }
+
+  .values_button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .ValuesCards_flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(0.8rem, 1.5vw, 1.5rem);
+    margin-top: 3rem;
+
+    align-items: start;
   }
 </style>
