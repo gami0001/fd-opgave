@@ -1,0 +1,133 @@
+---
+import Checkmark from "../icons/checkmark.svg";
+---
+
+<section class="vision">
+  <div class="container">
+    <div class="content">
+      <p class="first-p">OUR VISION</p>
+      <h2>Turn your ideas into reality</h2>
+
+      <p class="intro">
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+
+      <ul class="point-list">
+        <li>
+          <span class="check"><Checkmark /></span>
+          Bring to the table win-win survival strategies to ensure proactive domination.
+          At the end of the day.
+        </li>
+
+        <li>
+          <span class="check"><Checkmark /></span>
+          Capitalize on low hanging fruit to identify a ballpark value added activity
+          to beta test override the digital.
+        </li>
+      </ul>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="green-box"></div>
+      <img src="/src/data/images/storyboard.webp" alt="Team meeting" />
+    </div>
+  </div>
+
+  <div class="numbers">
+    <div>
+      <h2 class="number">1128+</h2>
+      <p>Successful Work</p>
+    </div>
+
+    <div>
+      <h2 class="number">908+</h2>
+      <p>Team member</p>
+    </div>
+
+    <div>
+      <h2 class="number">258+</h2>
+      <p>Happy Customers</p>
+    </div>
+
+    <div>
+      <h2 class="number">564+</h2>
+      <p>Creative Idea</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer component {
+    .vision {
+      margin-top: 100px;
+      grid-column: content-start / content-end;
+      container-name: expect;
+      container-type: inline-size;
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .image-wrapper {
+        position: relative;
+      }
+
+      .image-wrapper img {
+        width: 100%;
+        border-radius: 18px;
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+
+      .green-box {
+        position: absolute;
+        width: 100px;
+        height: 90px;
+        background: var(--color-green-400);
+        border-radius: 20px;
+        top: -15px;
+        right: -24px;
+        z-index: 1;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          gap: 14px;
+          color: #374151;
+        }
+      }
+      .check {
+        color: var(--color-green-600);
+        width: 20px;
+        height: auto;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .numbers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 0 auto; /* centrerer hele grid */
+        text-align: center;
+        margin-top: 60px;
+
+        .number {
+          font-size: var(--step-3);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+</style>
+2
