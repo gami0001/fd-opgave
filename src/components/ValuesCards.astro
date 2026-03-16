@@ -1,5 +1,6 @@
 ---
 const { icon: Icon, arrowIcon: ArrowIcon, title, description } = Astro.props;
+import "../styles/tokens.css";
 ---
 
 <article class="values_card">
@@ -15,7 +16,8 @@ const { icon: Icon, arrowIcon: ArrowIcon, title, description } = Astro.props;
 
 <style>
   .values_card {
-    background: white;
+    background: var(--color-neutrals-50);
+    color: var(--color-neutrals-900);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -26,8 +28,15 @@ const { icon: Icon, arrowIcon: ArrowIcon, title, description } = Astro.props;
   }
 
   .icon {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
+
+    background: var(--color-neutrals-900);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .cta {
@@ -42,5 +51,12 @@ const { icon: Icon, arrowIcon: ArrowIcon, title, description } = Astro.props;
   .cta svg {
     width: 1em;
     height: 1em;
+  }
+
+  .icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--color-neutrals-50);
+    fill: var(--color-neutrals-50);
   }
 </style>
