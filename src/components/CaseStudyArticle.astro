@@ -2,33 +2,34 @@
 //@ts-nocheck
 import DynamicImage from "@components/helpers/DynamicImage.astro";
 import caseStudy from "@data/caseStudy.json";
+import Button from "./Button.astro";
 const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <article class="CaseArticle">
   <header>
-    <DynamicImage imagePath={image} altText={caseName} />
+    <div class="Dynamic_picture">
+      <DynamicImage imagePath={image} altText={caseName} />
+    </div>
     <div class="case-details">
-      <dl>
-        <div>
-          <dt>Case Name</dt>
-          <dd>{caseName}</dd>
-        </div>
-        <div>
-          <dt>Category</dt>
-          <dd class="category">{category}</dd>
-        </div>
-        <div>
-          <dt>Date</dt>
-          <dd class="date">{date}</dd>
-        </div>
-      </dl>
-      <a href="#0" class="button">{buttonLabel}</a>
+      <div>
+        <dt>Case Name</dt>
+        <dd>{caseName}</dd>
+      </div>
+      <div>
+        <dt>Category</dt>
+        <dd class="category">{category}</dd>
+      </div>
+      <div>
+        <dt>Date</dt>
+        <dd class="date">{date}</dd>
+      </div>
+      <Button text="live Preview" variant="yellow" />
     </div>
   </header>
   {
     caseStudy.sections.map((section) => (
-      <section>
+      <section class="CaseStudy_text">
         {caseStudy.sections[0] === section ? (
           <h2>{section.title}</h2>
         ) : (
@@ -66,9 +67,6 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
 <style>
   .CaseArticle {
-    background: var(--color-neutrals-900);
-    color: var(--color-neutrals-50);
-
     display: grid;
     grid-template-columns: subgrid;
     grid-column: full;
@@ -76,7 +74,23 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
     padding-block: 4rem;
   }
 
+  .Dynamic_picture :global(img) {
+    border-radius: var(--border-radius-0);
+  }
+
   .CaseArticle > * {
     grid-column: content;
+  }
+
+  .case-details {
+    background: var(--color-neutrals-900);
+    color: var(--color-neutrals-50);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
+    padding: 54px 60px;
+    border-radius: var(--border-radius-01);
   }
 </style>

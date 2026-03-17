@@ -4,10 +4,15 @@ import EmployeeCards from "@components/EmployeeCards.astro";
 import Faq from "@components/Faq.astro";
 import ExpectCard from "@components/WhatToExpect.astro";
 import Vision from "@components/OurVision.astro";
+import Banner from "@components/Banner.astro";
 ---
 
 <Layout>
-  <h2>about</h2>
+  <Banner
+    eyebrow="about"
+    title="Igniting Innovation"
+    text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
+  />
   <EmployeeCards />
   <Faq />
   <ExpectCard />
