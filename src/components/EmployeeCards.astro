@@ -1,12 +1,11 @@
 ---
-import employees from "../data/employees.json";
-import facebook from "../icons/facebook.svg";
-import instagram from "../icons/instagram.svg";
+import DynamicIcon from "./helpers/DynamicIcon.astro";
+const { data } = Astro.props;
 ---
 
 <section class="team">
   {
-    employees.map((employee) => (
+    data.map((employee: any) => (
       <div class="card-wrapper">
         <article class="card">
           <img class="card-img" src={employee.img} alt={employee.name} />
@@ -17,9 +16,9 @@ import instagram from "../icons/instagram.svg";
             <p>{employee.description}</p>
 
             <div class="socials">
-              {employee.social_links.map((social) => (
+              {employee.social_links.map((social: any) => (
                 <a href={social.url} aria-label={social.platform}>
-                  {social.icon}
+                  <DynamicIcon class="icon" name={social.icon} />
                 </a>
               ))}
             </div>
@@ -39,15 +38,15 @@ import instagram from "../icons/instagram.svg";
       grid-template-rows: auto auto auto 1fr auto;
       gap: 2rem;
 
+      .card-wrapper {
+        container: card / inline-size;
+      }
       .card {
-        container-type: inline-size;
         display: grid;
-        grid: subgrid/subgrid;
-        grid-row: span 5;
       }
 
       .card-img {
-        border-radius: var(--border-radius-1);
+        border-radius: var(--border-radius-0);
         width: 100%;
         display: block;
       }
@@ -57,32 +56,55 @@ import instagram from "../icons/instagram.svg";
       }
 
       h3 {
-        font-size: var(--step-0);
+        font-size: var(--step-1);
         font-weight: 600;
       }
 
       h4 {
+        display: inline-block;
+        padding: 5px 20px;
         background-color: var(--color-neutrals-900);
         color: var(--color-neutrals-50);
         border-radius: var(--border-radius-1);
-      }
-    }
-
-    @container card (min-width: 300px) {
-      .card {
-        grid-template-columns: 120px 1fr;
-        align-items: center;
+        font-size: var(--step--2);
+        font-weight: 600;
       }
 
-      .card-img {
-        grid-row: span 3;
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
+      p {
+        font-size: var(--step--2);
+        color: var(--color-neutrals-700);
       }
 
-      .card-content {
-        text-align: left;
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .icon {
+        width: 25px;
+        height: auto;
+      }
+
+      @container card (width > 300px) {
+        .card {
+          grid-template-columns: 120px 1fr;
+          align-items: center;
+        }
+
+        .socials {
+          display: none;
+        }
+
+        h4 {
+          color: var(--color-neutrals-50);
+          font-size: var(--step--2);
+        }
+
+        .card-content {
+          text-align: left;
+          margin-left: 10px;
+        }
       }
     }
   }
