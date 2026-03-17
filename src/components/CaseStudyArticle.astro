@@ -93,4 +93,36 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
     padding: 54px 60px;
     border-radius: var(--border-radius-01);
   }
+
+  .CaseStudy_text {
+    --flow-space: var(--space-m);
+
+    > * + * {
+      margin-top: var(--flow-space);
+    }
+
+    h2 {
+      padding-top: 5rem;
+      --flow-space: var(--space-xl);
+      font-size: var(--step-2);
+    }
+
+    h3 {
+      --flow-space: var(--space-m);
+      font-size: var(--step-1);
+    }
+
+    p {
+      --flow-space: var(--space-s);
+    }
+
+    ul {
+      --flow-space: var(--space-s);
+    }
+  }
+
+  .CaseStudy_text :global(img) {
+    padding-bottom: var(--space-l);
+    border-radius: var(--border-radius-0);
+  }
 </style>
