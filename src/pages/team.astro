@@ -3,6 +3,7 @@ import employees from "../data/employees.json";
 import Layout from "@layouts/Layout.astro";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import DashboardLogin from "@components/DashboardLogin.astro";
+import Banner from "@components/Banner.astro";
 ---
 
 <Layout>
@@ -14,4 +15,10 @@ import DashboardLogin from "@components/DashboardLogin.astro";
     productivity, ensures customer satisfaction.
   </p>
   <EmployeeCards data={employees} />
+  <Banner
+    eyebrow="team"
+    title="The Consultors"
+    text="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
+  />
+  <EmployeeCards />
 </Layout>
