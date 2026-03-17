@@ -2,15 +2,14 @@
 import Layout from "@layouts/Layout.astro";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import DashboardLogin from "@components/DashboardLogin.astro";
+import Banner from "@components/Banner.astro";
 ---
 
 <Layout>
-  <p>Team</p>
-  <h1>The Consultors</h1>
-  <p>
-    Our success stems from the synergy between dedicated teams and our valued
-    clients. We prioritize a company culture that fosters exceptional
-    productivity, ensures customer satisfaction.
-  </p>
+  <Banner
+    eyebrow="team"
+    title="The Consultors"
+    text="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
+  />
   <EmployeeCards />
 </Layout>

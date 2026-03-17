@@ -2,7 +2,6 @@
 import Button from "./Button.astro";
 import Logo from "../icons/AskExperts.svg";
 import "../styles/tokens.css";
-import DashboardLogin from "./DashboardLogin.astro";
 ---
 
 <header class="breakout">
@@ -13,20 +12,16 @@ import DashboardLogin from "./DashboardLogin.astro";
 
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Case Study</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/case">Case Study</a></li>
         <li><a href="/team">Team</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
 
-    <Button id="nav-btn" popovertarget="pop" text="Login" />
+    <Button text="Login" />
   </div>
 </header>
-
-<div id="pop" popover>
-  <DashboardLogin />
-</div>
 
 <style>
   @layer components {
@@ -63,22 +58,6 @@ import DashboardLogin from "./DashboardLogin.astro";
           }
         }
       }
-    }
-    /* ✅ Popover CSS */
-    [popovertarget] {
-      anchor-name: --nav-btn;
-    }
-
-    [popover] {
-      position: absolute;
-      position-anchor: --nav-btn;
-      position-area: bottom span-left; /* under knappen, til højre */
-      justify-self: anchor-center; /* centreret ift. anchor */
-    }
-
-    #pop {
-      border-radius: var(--border-radius-1);
-      background-color: var(--color-neutrals-200);
     }
   }
 </style>

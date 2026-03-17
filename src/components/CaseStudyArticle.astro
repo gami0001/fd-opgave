@@ -5,7 +5,7 @@ import caseStudy from "@data/caseStudy.json";
 const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
-<article>
+<article class="CaseArticle">
   <header>
     <DynamicImage imagePath={image} altText={caseName} />
     <div class="case-details">
@@ -64,4 +64,19 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   }
 </article>
 
-<style></style>
+<style>
+  .CaseArticle {
+    background: var(--color-neutrals-900);
+    color: var(--color-neutrals-50);
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+
+    padding-block: 4rem;
+  }
+
+  .CaseArticle > * {
+    grid-column: content;
+  }
+</style>
