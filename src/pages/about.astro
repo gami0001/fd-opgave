@@ -1,14 +1,17 @@
 ---
+import employees from "../data/employees.json";
 import Layout from "@layouts/Layout.astro";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import Faq from "@components/Faq.astro";
 import ExpectCard from "@components/WhatToExpect.astro";
 import Vision from "@components/OurVision.astro";
+
+const onlyTwo = employees.slice(0, 2);
 ---
 
 <Layout>
   <h2>about</h2>
-  <EmployeeCards />
+  <EmployeeCards data={onlyTwo} />
   <Faq />
   <ExpectCard />
   <Vision />
