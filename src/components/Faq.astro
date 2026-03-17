@@ -6,7 +6,7 @@ import PlusIkon from "../icons/plus.svg";
 <section class="faq">
   <div class="faq-container">
     <div class="faq-label">
-      <p>FAQ</p>
+      <p class="first-p">FAQ</p>
       <h2>Customer Questions</h2>
     </div>
     {
@@ -32,13 +32,18 @@ import PlusIkon from "../icons/plus.svg";
   @layer components {
     .faq-label {
       display: flex;
-      flex-direction: column; /* lægger FAQ øverst og Customer Questions under */
-      align-items: center; /* centrerer indholdet horisontalt */
-      text-align: center; /* centrerer teksten */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
 
       h2 {
         font-size: var(--step-3);
         font-weight: 650;
+        margin-bottom: var(--space-s);
+      }
+
+      .first-p {
+        margin-bottom: var(--space-s);
       }
     }
 
@@ -49,7 +54,7 @@ import PlusIkon from "../icons/plus.svg";
       width: max(900px, 100%);
 
       .faq-container {
-        margin-inline: auto; /* <-- centrerer */
+        margin-inline: auto;
 
         padding: var(--space-2xl);
       }
