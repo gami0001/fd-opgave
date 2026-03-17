@@ -6,6 +6,8 @@ import Faq from "@components/Faq.astro";
 import ExpectCard from "@components/WhatToExpect.astro";
 import Vision from "@components/OurVision.astro";
 import Banner from "@components/Banner.astro";
+
+const onlyTwo = employees.slice(0, 2);
 ---
 
 <Layout>
@@ -14,7 +16,7 @@ import Banner from "@components/Banner.astro";
     title="Igniting Innovation"
     text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
   />
-  <EmployeeCards />
+  <EmployeeCards data={onlyTwo} />
   <Faq />
   <ExpectCard />
   <Vision />
