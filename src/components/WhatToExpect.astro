@@ -6,7 +6,10 @@ import Checkmark from "../icons/checkmark.svg";
   <div class="container">
     <div class="image-wrapper">
       <div class="green-box"></div>
-      <img src="/src/data/images/storyboard.webp" alt="Team meeting" />
+      <img
+        src="src/assets/images/expect.webp"
+        alt="billede af 3 personer som snakker"
+      />
     </div>
 
     <div class="content">
@@ -42,11 +45,12 @@ import Checkmark from "../icons/checkmark.svg";
       grid-column: content-start / content-end;
       container-name: expect;
       container-type: inline-size;
+
       .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
-        align-items: center;
+        align-items: start;
       }
 
       .image-wrapper {
@@ -59,6 +63,11 @@ import Checkmark from "../icons/checkmark.svg";
         display: block;
         position: relative;
         z-index: 2;
+      }
+
+      h2 {
+        font-size: var(--step-2);
+        font-weight: 600;
       }
 
       .green-box {

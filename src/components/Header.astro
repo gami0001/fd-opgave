@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro";
 import Logo from "../icons/AskExperts.svg";
+import DashboardLogin from "./DashboardLogin.astro";
 import "../styles/tokens.css";
 ---
 
@@ -19,9 +20,13 @@ import "../styles/tokens.css";
       </ul>
     </nav>
 
-    <Button text="Login" />
+    <Button id="nav-btn" popovertarget="pop" text="Login" />
   </div>
 </header>
+
+<div id="pop" popover>
+  <DashboardLogin />
+</div>
 
 <style>
   @layer components {
@@ -58,6 +63,23 @@ import "../styles/tokens.css";
           }
         }
       }
+    }
+    /* ✅ Popover CSS */
+    [popovertarget] {
+      anchor-name: --nav-btn;
+    }
+
+    [popover] {
+      position: absolute;
+      position-anchor: --nav-btn;
+      position-area: bottom span-left; /* under knappen, til højre */
+      justify-self: anchor-center; /* centreret ift. anchor */
+    }
+
+    #pop {
+      border-radius: var(--border-radius-0);
+      background-color: var(--color-neutrals-200);
+      border: none;
     }
   }
 </style>
