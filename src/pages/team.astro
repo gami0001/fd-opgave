@@ -7,18 +7,10 @@ import Banner from "@components/Banner.astro";
 ---
 
 <Layout>
-  <p>Team</p>
-  <h1>The Consultors</h1>
-  <p>
-    Our success stems from the synergy between dedicated teams and our valued
-    clients. We prioritize a company culture that fosters exceptional
-    productivity, ensures customer satisfaction.
-  </p>
-  <EmployeeCards data={employees} />
   <Banner
     eyebrow="team"
     title="The Consultors"
     text="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
   />
-  <EmployeeCards />
+  <EmployeeCards data={employees} />
 </Layout>
