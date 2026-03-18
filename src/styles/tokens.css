@@ -1,6 +1,7 @@
 :root {
   /* ==== Colors ==== */
   /* PRIMITIVES */
+  --color-yellow-400: #ffecbb;
   --color-yellow-500: #ffcc4a;
   --color-green-400: #a4eda4;
   --color-neutrals-50: #f9fafb;
@@ -54,8 +55,9 @@
   --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
 
   /* ==== Border Radii ==== */
-  --border-radius-0: 15px;
+  --border-radius-0: 20px;
   --border-radius-01: 30px;
   --border-radius-1: 42px;
   --border-radius-2: 45px;
+  --border-radius-3: 50%;
 }
