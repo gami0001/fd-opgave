@@ -7,23 +7,25 @@ const { data } = Astro.props;
   {
     data.map((employee: any) => (
       <div class="card-wrapper">
-        <article class="card">
-          <img class="card-img" src={employee.img} alt={employee.name} />
+        <a href={`/team/${employee.slug}`} class="card-link">
+          <article class="card">
+            <img class="card-img" src={employee.img} alt={employee.name} />
 
-          <div class="card-content">
-            <h3>{employee.name}</h3>
-            <h4 class="title">{employee.title}</h4>
-            <p>{employee.description}</p>
+            <div class="card-content">
+              <h3>{employee.name}</h3>
+              <h4 class="title">{employee.title}</h4>
+              <p>{employee.description}</p>
 
-            <div class="socials">
-              {employee.social_links.map((social: any) => (
-                <a href={social.url} aria-label={social.platform}>
-                  <DynamicIcon class="icon" name={social.icon} />
-                </a>
-              ))}
+              <div class="socials">
+                {employee.social_links.map((social: any) => (
+                  <a href={social.url} aria-label={social.platform}>
+                    <DynamicIcon class="icon" name={social.icon} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </a>
       </div>
     ))
   }
