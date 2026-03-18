@@ -6,6 +6,7 @@ import Faq from "@components/Faq.astro";
 import ExpectCard from "@components/WhatToExpect.astro";
 import Vision from "@components/OurVision.astro";
 import Banner from "@components/Banner.astro";
+import ButtonLink from "@components/ButtonLink.astro";
 
 const onlyTwo = employees.slice(0, 2);
 ---
@@ -16,8 +17,41 @@ const onlyTwo = employees.slice(0, 2);
     title="Igniting Innovation"
     text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
   />
-  <EmployeeCards data={onlyTwo} />
+  <section class="our-team">
+    <div class="team-content">
+      <p class="first-p">OUR TEAM</p>
+      <h2>We champion the bold</h2>
+      <p>
+        Our success stems from the synergy between dedicated teams and our
+        valued clients. We prioritize a company culture that fosters exceptional
+        productivity, ensures customer satisfaction.
+      </p>
+      <ButtonLink text="Meet the team" />
+    </div>
+    <div class="cards-wrapper">
+      <EmployeeCards class="team-cards-2" data={onlyTwo} />
+    </div>
+  </section>
   <Faq />
   <ExpectCard />
   <Vision />
 </Layout>
+
+<style>
+  .our-team {
+    grid-column: content-start / content-end;
+    display: contents;
+
+    .first-p {
+      font-size: var(--step--2);
+    }
+
+    p {
+      font-size: var(--step--2);
+    }
+
+    h2 {
+      font-size: var(--step-2);
+    }
+  }
+</style>
