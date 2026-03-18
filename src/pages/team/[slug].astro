@@ -1,0 +1,141 @@
+---
+import employees from "../../data/employees.json";
+import Layout from "@layouts/Layout.astro";
+import DynamicIcon from "@components/helpers/DynamicIcon.astro";
+
+export async function getStaticPaths() {
+  return employees.map((employee) => ({
+    params: { slug: employee.slug },
+    props: { employee },
+  }));
+}
+
+const { employee } = Astro.props;
+---
+
+<Layout>
+  <section class="employee_single">
+    <div class="grid_1-1">
+      <div class="left">
+        <div class="image-wrapper">
+          <div class="green-box"></div>
+          <img src={employee.img} alt={employee.name} />
+        </div>
+
+        <div class="socials">
+          {
+            employee.social_links.map((social) => (
+              <a href={social.url} aria-label={social.platform}>
+                <DynamicIcon name={social.icon} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="right">
+        <h1>{employee.name}</h1>
+        <p class="title">{employee.title}</p>
+
+        <p class="body_text">{employee.description_long}</p>
+
+        <hr class="divider" />
+
+        <h3>Past experience</h3>
+        <p class="body_text">{employee.past_experience}</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .employee_single {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+    padding-block: var(--space-3xl);
+  }
+
+  .employee_single > * {
+    grid-column: content;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .left img {
+    width: 100%;
+    border-radius: var(--border-radius-0);
+  }
+
+  .left .image-wrapper {
+    position: relative;
+  }
+
+  .left .image-wrapper img {
+    width: 100%;
+    border-radius: var(--border-radius-0);
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  .left .green-box {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background: var(--color-ui-secondary);
+    border-radius: var(--border-radius-0);
+    top: -30px;
+    left: -40px;
+    z-index: 1;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-m);
+    margin-top: var(--space-s);
+  }
+  .right h1 {
+    font-size: var(--step-3);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .right p.title {
+    font-size: var(--step--2);
+    margin-bottom: var(--space-s);
+  }
+
+  .right .body_text {
+    font-size: var(--step--2);
+    line-height: 1.5;
+    margin-bottom: var(--space-m);
+    color: var(--color-text-muted);
+  }
+
+  .right h3 {
+    font-size: var(--step-3);
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-s);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-neutrals-400);
+    margin: var(--space-m) 0;
+  }
+
+  @media (max-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .right h1 {
+      font-size: var(--step-3);
+    }
+  }
+</style>
