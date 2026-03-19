@@ -17,21 +17,28 @@ const onlyTwo = employees.slice(0, 2);
     title="Igniting Innovation"
     text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
   />
+
   <section class="our-team">
-    <div class="team-content">
-      <p class="first-p">OUR TEAM</p>
-      <h2>We champion the bold</h2>
-      <p>
-        Our success stems from the synergy between dedicated teams and our
-        valued clients. We prioritize a company culture that fosters exceptional
-        productivity, ensures customer satisfaction.
-      </p>
-      <ButtonLink text="Meet the team" />
-    </div>
-    <div class="cards-wrapper">
-      <EmployeeCards class="team-cards-2" data={onlyTwo} />
+    <div class="team-wrapper">
+      <div class="team-grid">
+        <p class="first-p">OUR TEAM</p>
+        <h2>We champion the bold</h2>
+        <p>
+          Our success stems from the synergy between dedicated teams and our
+          valued clients. We prioritize a company culture that fosters
+          exceptional productivity, ensures customer satisfaction.
+        </p>
+        <div class="btn-wrapper">
+          <ButtonLink text="Meet the team" />
+        </div>
+      </div>
+
+      <div class="cards-wrapper">
+        <EmployeeCards class="team-cards-2" data={onlyTwo} />
+      </div>
     </div>
   </section>
+
   <Faq />
   <ExpectCard />
   <Vision />
@@ -39,19 +46,62 @@ const onlyTwo = employees.slice(0, 2);
 
 <style>
   .our-team {
-    grid-column: content-start / content-end;
-    display: contents;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+    padding-block: 4rem;
+  }
 
-    .first-p {
-      font-size: var(--step--2);
+  .our-team > * {
+    grid-column: content;
+  }
+
+  .team-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .team-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .team-cards-2 > * {
+    min-width: 300px;
+  }
+
+  .first-p {
+    font-size: var(--step--2);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: var(--step--2);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: var(--step-2);
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .team-wrapper {
+      grid-template-columns: 1fr;
     }
 
-    p {
-      font-size: var(--step--2);
-    }
-
-    h2 {
-      font-size: var(--step-2);
+    .cards-wrapper {
+      margin-top: 2rem;
     }
   }
 </style>
