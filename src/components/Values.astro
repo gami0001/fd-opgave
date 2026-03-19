@@ -7,9 +7,11 @@ import Globe from "../icons/globe.svg";
 import Bars from "../icons/Bars.svg";
 import ArrowRight from "../icons/arrow--right.svg";
 import "../styles/tokens.css";
+
+const { variation = "dark", buttonVariant } = Astro.props;
 ---
 
-<section class="values">
+<section class={`values ${variation}`}>
   <div>
     <div class="values_top">
       <div class="values_text">
@@ -23,7 +25,11 @@ import "../styles/tokens.css";
       </div>
 
       <div class="values_button">
-        <Button text="Get in touch" />
+        <Button
+          text="Get in touch"
+          variant={buttonVariant ??
+            (variation === "light" ? "dark" : "default")}
+        />
       </div>
     </div>
 
@@ -61,14 +67,20 @@ import "../styles/tokens.css";
 
 <style>
   .values {
-    background: var(--color-neutrals-900);
-    color: var(--color-neutrals-50);
-
     display: grid;
     grid-template-columns: subgrid;
     grid-column: full;
-
     padding-block: 4rem;
+  }
+
+  .values.dark {
+    background: var(--color-neutrals-900);
+    color: var(--color-neutrals-50);
+  }
+
+  .values.light {
+    background: var(--color-neutrals-50);
+    color: var(--color-neutrals-900);
   }
 
   .values > * {
@@ -97,7 +109,6 @@ import "../styles/tokens.css";
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: clamp(0.8rem, 1.5vw, 1.5rem);
     margin-top: 3rem;
-
     align-items: start;
   }
 </style>
