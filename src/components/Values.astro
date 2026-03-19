@@ -15,7 +15,7 @@ const { variation = "dark", buttonVariant } = Astro.props;
   <div>
     <div class="values_top">
       <div class="values_text">
-        <p class="eyebrow">Growing with our clients</p>
+        <p class="eyebrow">GROWING WITH OUT CLIENTS</p>
         <h2>Our core values & principles</h2>
         <p class="subtext">
           Capitalize on low hanging fruit to identify a ballpark value added
@@ -71,11 +71,31 @@ const { variation = "dark", buttonVariant } = Astro.props;
     grid-template-columns: subgrid;
     grid-column: full;
     padding-block: 4rem;
+    margin-top: var(--space-xl);
   }
 
   .values.dark {
     background: var(--color-neutrals-900);
     color: var(--color-neutrals-50);
+  }
+
+  h2 {
+    font-size: var(--step-2);
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: var(--space-s);
+  }
+
+  .eyebrow {
+    font-size: var(--step--1);
+    margin-bottom: var(--space-s);
+    color: var(--color-neutrals-900);
+  }
+
+  p {
+    font-size: var(--step--1);
+    margin-bottom: var(--space-s);
+    color: var(--color-neutrals-700);
   }
 
   .values.light {

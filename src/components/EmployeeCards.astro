@@ -39,12 +39,14 @@ const { data } = Astro.props;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       grid-template-rows: auto auto auto 1fr auto;
       gap: 2rem;
+      margin-bottom: var(--space-l);
 
       .card-wrapper {
         container: card / inline-size;
       }
       .card {
         display: grid;
+        margin-top: var(--space-s);
       }
 
       .card-img {
