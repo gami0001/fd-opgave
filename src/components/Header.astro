@@ -64,7 +64,7 @@ import "../styles/tokens.css";
         }
       }
     }
-    /* ✅ Popover CSS */
+
     [popovertarget] {
       anchor-name: --nav-btn;
     }
@@ -72,15 +72,14 @@ import "../styles/tokens.css";
     [popover] {
       position: absolute;
       position-anchor: --nav-btn;
-      position-area: bottom span-left; /* under knappen, til højre */
-      justify-self: anchor-center; /* centreret ift. anchor */
+      position-area: bottom span-left;
+      justify-self: anchor-center;
     }
 
     #pop {
       border-radius: var(--border-radius-0);
       background-color: var(--color-neutrals-200);
       border: none;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     }
   }
 </style>

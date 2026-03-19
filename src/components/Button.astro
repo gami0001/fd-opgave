@@ -25,10 +25,37 @@ const {
       cursor: pointer;
       font-weight: 500;
       color: var(--color-neutrals-900);
+
+      &:hover {
+        background-color: color-mix(
+          in oklab,
+          var(--color-neutrals-50),
+          #000 20%
+        );
+      }
+
+      &:active {
+        background-color: color-mix(
+          in oklab,
+          var(--color-neutrals-50),
+          #000 20%
+        );
+      }
     }
 
     .btn-yellow {
       background-color: var(--color-yellow-500);
+
+      &:hover {
+        background-color: color-mix(
+          in oklab,
+          var(--color-yellow-500),
+          #000 10%
+        );
+      }
+      &:active {
+        background: color-mix(in oklab, var(--color-yellow-500), #000 20%);
+      }
     }
   }
 </style>

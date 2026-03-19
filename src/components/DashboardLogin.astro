@@ -3,7 +3,7 @@ import "../styles/tokens.css";
 import Button from "./Button.astro";
 ---
 
-<article>
+<article class="dash-container">
   <div class="dash-wrapper">
     <h2>Dashboard Login</h2>
     <form>
@@ -43,6 +43,9 @@ import Button from "./Button.astro";
 
     input {
       border-radius: var(--border-radius-0);
+      border: solid 1px;
+      height: 40px;
+      background-color: var(--color-neutrals-50);
     }
   }
 </style>
