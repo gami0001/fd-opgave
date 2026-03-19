@@ -3,6 +3,7 @@ import employees from "../../data/employees.json";
 import Layout from "@layouts/Layout.astro";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import Banner from "@components/Banner.astro";
+import ButtonLink from "@components/ButtonLink.astro";
 ---
 
 <Layout>
@@ -11,5 +12,72 @@ import Banner from "@components/Banner.astro";
     title="The Consultors"
     text="Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction."
   />
+
+  <section class="meet-team">
+    <div class="grid_1-1">
+      <div class="info">
+        <h2>Meet Our Great Team</h2>
+        <p>
+          Welcome to our amazing team! We are a group of passionate individuals
+          dedicated to excellence and innovation. Each member brings unique
+          skills and experiences, working together to achieve our goals. Join us
+          as we embark on exciting projects and create lasting impacts.
+        </p>
+      </div>
+      <div class="button-team">
+        <ButtonLink text="Join our team" />
+      </div>
+    </div>
+  </section>
   <EmployeeCards data={employees} />
 </Layout>
+
+<style>
+  @layer component {
+    .meet-team {
+      grid-column: content-start / content-end;
+    }
+
+    .grid_1-1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start; /* øverst justering */
+      width: 100%;
+    }
+
+    h2 {
+      font-size: var(--step-2);
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: var(--space-s);
+    }
+
+    p {
+      font-size: var(--step--1);
+      color: var(--color-neutrals-700);
+      margin-bottom: var(--space-s);
+    }
+
+    .info {
+      max-width: 600px;
+    }
+
+    .button-team {
+      margin-top: auto;
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .grid_1-1 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .button-team {
+        margin-top: 0;
+      }
+    }
+  }
+</style>

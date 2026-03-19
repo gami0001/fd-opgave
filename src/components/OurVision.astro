@@ -76,13 +76,16 @@ import Checkmark from "../icons/checkmark.svg";
         align-items: start;
       }
 
-      .first-p {
+      p {
         font-size: var(--step--1);
+        margin-bottom: var(--space-s);
+        color: var(--color-neutrals-700);
       }
 
       h2 {
-        font-size: var(--step-2);
+        font-size: var(--step-3);
         font-weight: 600;
+        margin-bottom: var(--space-s);
       }
 
       .image-wrapper {
@@ -91,7 +94,7 @@ import Checkmark from "../icons/checkmark.svg";
 
       .image-wrapper img {
         width: 100%;
-        border-radius: 18px;
+        border-radius: var(--border-radius-0);
         display: block;
         position: relative;
         z-index: 2;
@@ -102,7 +105,7 @@ import Checkmark from "../icons/checkmark.svg";
         width: 100px;
         height: 90px;
         background: var(--color-green-400);
-        border-radius: 20px;
+        border-radius: var(--border-radius-0);
         top: -15px;
         right: -24px;
         z-index: 1;
@@ -114,9 +117,11 @@ import Checkmark from "../icons/checkmark.svg";
         margin: 0;
 
         li {
+          font-size: var(--step--1);
           display: flex;
           gap: 14px;
-          color: #374151;
+          color: var(--color-neutrals-700);
+          margin-bottom: var(--space-s);
         }
       }
       .check {
@@ -130,10 +135,10 @@ import Checkmark from "../icons/checkmark.svg";
       .numbers {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        gap: 8px;
         margin: 0 auto; /* centrerer hele grid */
         text-align: center;
-        margin-top: 60px;
+        margin-top: var(--space-xl);
 
         .number {
           font-size: var(--step-3);
@@ -141,6 +146,16 @@ import Checkmark from "../icons/checkmark.svg";
         }
       }
     }
+
+    @media (max-width: 800px) {
+      .vision .container {
+        grid-template-columns: 1fr;
+      }
+
+      .vision .numbers {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: var(--space-xl);
+      }
+    }
   }
 </style>
-2

@@ -48,6 +48,7 @@ const onlyTwo = employees.slice(0, 2);
   .our-team {
     display: grid;
     grid-template-columns: subgrid;
+    align-items: start;
     grid-column: full;
     padding-block: 4rem;
   }
@@ -80,19 +81,21 @@ const onlyTwo = employees.slice(0, 2);
   }
 
   .first-p {
-    font-size: var(--step--2);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    font-size: var(--step--1);
+    margin-bottom: var(--space-s);
+    color: var(--color-neutrals-700);
   }
 
   p {
-    font-size: var(--step--2);
-    margin-bottom: 1.5rem;
+    font-size: var(--step--1);
+    margin-bottom: var(--space-s);
+    color: var(--color-neutrals-700);
   }
 
   h2 {
-    font-size: var(--step-2);
-    margin-bottom: 1rem;
+    font-size: var(--step-3);
+    font-weight: 600;
+    margin-bottom: var(--space-s);
   }
 
   @media (max-width: 768px) {
