@@ -32,7 +32,7 @@ import Checkmark from "../icons/checkmark.svg";
     <div class="image-wrapper">
       <div class="green-box"></div>
       <img
-        src="src/assets/images/ourVision.webp"
+        src="/images/ourVision.webp"
         alt="billede af 3 personer der arbejder ved en computer"
       />
     </div>
@@ -76,16 +76,13 @@ import Checkmark from "../icons/checkmark.svg";
         align-items: start;
       }
 
-      p {
+      .first-p {
         font-size: var(--step--1);
-        margin-bottom: var(--space-s);
-        color: var(--color-neutrals-700);
       }
 
       h2 {
-        font-size: var(--step-3);
+        font-size: var(--step-2);
         font-weight: 600;
-        margin-bottom: var(--space-s);
       }
 
       .image-wrapper {
@@ -94,7 +91,7 @@ import Checkmark from "../icons/checkmark.svg";
 
       .image-wrapper img {
         width: 100%;
-        border-radius: var(--border-radius-0);
+        border-radius: 18px;
         display: block;
         position: relative;
         z-index: 2;
@@ -105,7 +102,7 @@ import Checkmark from "../icons/checkmark.svg";
         width: 100px;
         height: 90px;
         background: var(--color-green-400);
-        border-radius: var(--border-radius-0);
+        border-radius: 20px;
         top: -15px;
         right: -24px;
         z-index: 1;
@@ -117,11 +114,9 @@ import Checkmark from "../icons/checkmark.svg";
         margin: 0;
 
         li {
-          font-size: var(--step--1);
           display: flex;
           gap: 14px;
-          color: var(--color-neutrals-700);
-          margin-bottom: var(--space-s);
+          color: #374151;
         }
       }
       .check {
@@ -135,10 +130,10 @@ import Checkmark from "../icons/checkmark.svg";
       .numbers {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        margin: 0 auto; /* centrerer hele grid */
+        gap: 10px;
+        margin: 0 auto;
         text-align: center;
-        margin-top: var(--space-xl);
+        margin-top: 60px;
 
         .number {
           font-size: var(--step-3);
@@ -146,16 +141,6 @@ import Checkmark from "../icons/checkmark.svg";
         }
       }
     }
-
-    @media (max-width: 800px) {
-      .vision .container {
-        grid-template-columns: 1fr;
-      }
-
-      .vision .numbers {
-        grid-template-columns: repeat(2, 1fr);
-        margin-bottom: var(--space-xl);
-      }
-    }
   }
 </style>
+2
