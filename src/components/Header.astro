@@ -35,14 +35,14 @@ import "../styles/tokens.css";
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
+      padding: clamp(10px, 2vw, 20px) clamp(20px, 5vw, 40px);
 
       a {
         display: flex;
         align-items: center;
 
         svg {
-          width: 120px;
+          width: clamp(80px, 15vw, 120px);
           height: auto;
         }
       }
@@ -51,13 +51,14 @@ import "../styles/tokens.css";
         ul {
           display: flex;
           list-style: none;
-          gap: 30px;
+          gap: clamp(15px, 3vw, 30px);
 
           li {
             a {
               text-decoration: none;
               color: var(--color-neutrals-50);
               font-weight: 500;
+              font-size: var(--step--0);
               transition: color 0.3s;
             }
           }
