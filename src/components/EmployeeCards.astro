@@ -49,6 +49,7 @@ const { data } = Astro.props;
 
       .card-img {
         anchor-name: --title-back;
+        grid-area: 1 / 1;
         border-radius: var(--border-radius-0);
         width: 100%;
         display: block;
@@ -87,7 +88,13 @@ const { data } = Astro.props;
       .icon {
         width: 25px;
         height: auto;
-        color: var(--color-neutrals-900);
+      }
+
+      .card-wrapper .card-content h4 {
+        grid-area: 1 / 1;
+        z-index: 1;
+        place-self: end end;
+        text-align: left;
       }
 
       @container card (width > 400px) {
@@ -98,6 +105,11 @@ const { data } = Astro.props;
 
         .socials {
           display: none;
+        }
+
+        h4 {
+          color: var(--color-neutrals-50);
+          font-size: var(--step--2);
         }
 
         .card-content {
