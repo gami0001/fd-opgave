@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { employee } = Astro.props;
 ---
 
-<Layout>
+<Layout title={employee.name}>
   <section class="employee_single">
     <div class="grid_1-1">
       <div class="left">

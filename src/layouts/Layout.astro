@@ -3,6 +3,8 @@ import "@styles/main.css";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Newsletter from "@components/Newsletter.astro";
+
+const { title = "titel" } = Astro.props;
 ---
 
 <html lang="en">
@@ -23,7 +25,7 @@ import Newsletter from "@components/Newsletter.astro";
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>DIN TITEL HER. MÅSKE SOM PROP?</title>
+    <title>{title}</title>
     <style is:inline>
       @layer reset, global, tokens, components, overrides;
     </style>
