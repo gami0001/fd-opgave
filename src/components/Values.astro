@@ -71,6 +71,12 @@ const { variation = "dark", buttonVariant } = Astro.props;
     grid-template-columns: subgrid;
     grid-column: full;
     padding-block: 4rem;
+
+    h2 {
+      font-size: var(--step-3);
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
     margin-top: var(--space-xl);
   }
 
@@ -112,6 +118,16 @@ const { variation = "dark", buttonVariant } = Astro.props;
     grid-template-columns: 1fr 1fr;
     gap: clamp(1rem, 3vw, 3rem);
     margin-bottom: 3rem;
+  }
+
+  .values_top .eyebrow {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .values_top .subtext {
+    max-width: 55ch;
+    margin-bottom: var(--space-xs);
   }
 
   .values_text {

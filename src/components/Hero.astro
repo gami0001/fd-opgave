@@ -24,30 +24,43 @@ import ArrowRight from "../icons/arrow--right.svg";
 </section>
 
 <style>
-  /* Styles her */
   @layer components {
     .hero {
       display: grid;
       grid-template-columns: subgrid;
       grid-column: full;
-    }
+      grid-template-rows: auto 1fr;
 
-    h1 {
-      font-size: var(--step-2);
+      h1 {
+        font-size: var(--step-3);
+        max-width: 15ch;
+      }
+
+      p {
+        max-width: 50ch;
+        padding-bottom: 1em;
+      }
     }
 
     .hero-content {
       grid-column: content-start / content-mid;
+      grid-row: 1 / 2;
+      padding-block: 5rem;
     }
 
     .hero img {
       grid-column: content-mid / full-end;
       width: 100%;
       height: auto;
+      grid-row: 1 / 2;
     }
 
     .hero :global(.services) {
       grid-column: content-start / content-end;
+      grid-row: 2;
+
+      transform: translateY(-50%);
+      z-index: 2;
     }
   }
 </style>
