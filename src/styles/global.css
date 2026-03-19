@@ -10,8 +10,8 @@
 body {
   display: grid;
   grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, 45ch)
-    [content-mid] minmax(0, 45ch)
+    [full-start] 1fr [content-start] minmax(0, 600px)
+    [content-mid] minmax(0, 600px)
     [content-end]
     1fr [full-end];
 }
