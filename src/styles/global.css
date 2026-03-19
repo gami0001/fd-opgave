@@ -4,6 +4,9 @@
   navigation: auto;
 }
 
+:root {
+  interpolate-size: allow-keywords;
+}
 body {
   display: grid;
   grid-template-columns:

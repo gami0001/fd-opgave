@@ -11,17 +11,15 @@ import PlusIkon from "../icons/plus.svg";
     </div>
     {
       FaqData.faq.map((item) => (
-        <details class="faq-item">
+        <details class="faq-item" name="accordian">
           <summary>
             <span class="question">{item.question}</span>
             <PlusIkon />
           </summary>
 
-          <div class="answer">
-            {item.answer.split("\n\n").map((p) => (
-              <p>{p}</p>
-            ))}
-          </div>
+          {item.answer.split("\n\n").map((p) => (
+            <p>{p}</p>
+          ))}
         </details>
       ))
     }
@@ -30,6 +28,10 @@ import PlusIkon from "../icons/plus.svg";
 
 <style>
   @layer components {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+
     .faq-label {
       display: flex;
       flex-direction: column;
@@ -55,13 +57,15 @@ import PlusIkon from "../icons/plus.svg";
 
       .faq-container {
         margin-inline: auto;
-
         padding: var(--space-2xl);
+        display: block; /* vigtig */
       }
     }
 
     details {
+      display: block; /* vigtig */
       color: hsl(190 30% 12%);
+      interpolate-size: allow-keywords;
       border-bottom: 1px solid #dadada;
 
       summary {
@@ -69,7 +73,6 @@ import PlusIkon from "../icons/plus.svg";
         justify-content: space-between;
         font-weight: 700;
         color: #181818;
-        text-wrap: revert;
         user-select: none;
         cursor: pointer;
 
@@ -80,49 +83,34 @@ import PlusIkon from "../icons/plus.svg";
         }
 
         span {
-          border: none;
-          text-align: start;
-          padding: 0;
-          inline-size: 100%;
-          padding-block: 1rlh;
           display: flex;
           gap: 1rem;
           justify-content: space-between;
+          padding-block: 1rlh;
 
           svg {
             inline-size: auto;
             height: 1lh;
             flex-shrink: 0;
-            /**************************************************************************** */
             transform: rotate(var(--r, 0));
             transition: transform 0.3s ease;
-            /**************************************************************************** */
           }
         }
       }
-      /**************************************************************************** */
+
       &[open] {
-        --r: z 90deg;
+        --r: 90deg;
       }
-      [open] summary::after {
-        content: "–";
-      }
-      /**************************************************************************** */
-      .answer {
-        color: #595566;
-        grid-template-rows: 0fr;
-        overflow: hidden;
 
-        > * + * {
-          margin-top: 1em;
+      @supports (interpolate-size: allow-keywords) {
+        &::details-content {
+          height: 0;
+          transition: 0.4s allow-discrete;
+          overflow: clip;
         }
 
-        :last-child {
-          padding-block-end: 1rlh;
-        }
-
-        .link-block {
-          display: block;
+        &[open]::details-content {
+          block-size: auto;
         }
       }
     }
