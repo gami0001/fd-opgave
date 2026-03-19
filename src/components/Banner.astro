@@ -1,13 +1,15 @@
 ---
 import "../styles/tokens.css";
+
 const {
   eyebrow = "Eyebrow",
   title = "Title",
   text = "Text content...",
+  line,
 } = Astro.props;
 ---
 
-<section class="banner_section">
+<section class={`banner_section ${line ? `line-${line}` : ""}`}>
   <p class="eyebrow">{eyebrow}</p>
   <h1>{title}</h1>
   <p>{text}</p>
@@ -41,6 +43,25 @@ const {
   h1 {
     font-size: var(--step-4);
     margin-bottom: 1rem;
+
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+  }
+
+  h1::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0.09em;
+    height: 0.1em;
+
+    background: var(--color-yellow-600);
+
+    z-index: -1;
   }
 
   p {
