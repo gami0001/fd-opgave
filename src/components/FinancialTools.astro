@@ -1,18 +1,98 @@
 ---
-
+import data from "@data/financialProjections.json";
+import Cal from "@icons/cal.svg";
+import Card from "@icons/card.svg";
+import Law from "@icons/law.svg";
+import Money from "@icons/money.svg";
+import ArrowLeft from "@icons/arrow-left.svg";
+import ArrowRight from "@icons/arrow--right.svg";
 ---
 
-<section>
-  <div>
-    <p>Financial Tools</p>
-    <h2>Financial Projections</h2>
-    <p>
-      Financial projections are essential for planning and monitoring a
-      company’s performance. They provide insights into potential revenue,
-      expenses, and profitability over specific periods.
-    </p>
-    <button>pile</button>
+<section class="financial">
+  <div class="financial-content">
+    <div class="grid_1-1">
+      <div class="intro">
+        <p class="eyebrow">{data.eyebrow}</p>
+        <h2>{data.title}</h2>
+        <p>{data.subtitle}</p>
+      </div>
+      <div class="arrows">
+        <ArrowLeft class="arrow" />
+        <ArrowRight class="arrow" />
+      </div>
+    </div>
   </div>
 
-  <div></div>
+  <div class="cards">
+    {
+      data.values.map((item: any) => (
+        <div class="card">
+          <div class="icon">
+            {item.icon === "cal" && <Cal />}
+            {item.icon === "card" && <Card />}
+            {item.icon === "law" && <Law />}
+            {item.icon === "money" && <Money />}
+          </div>
+
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))
+    }
+  </div>
 </section>
+
+<style>
+  @layer component {
+    .financial {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full;
+      background-color: var(--color-neutrals-50);
+    }
+    .financial-content {
+      display: flex;
+      justify-content: space-between;
+      grid-column: content-start / content-end;
+    }
+
+    .grid_1-1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start; /* øverst justering */
+      width: 100%;
+    }
+
+    .intro {
+      max-width: 500px;
+    }
+    .arrows {
+      margin-top: auto; /* skubber pilene til bunden */
+      display: flex; /* ligger ved siden af hinanden */
+      gap: 20px;
+    }
+    .arrow {
+      color: var(--color-green-50);
+      background-color: var(--color-neutrals-900);
+      padding: 30px;
+      border-radius: var(--border-radius-3);
+    }
+
+    .cards {
+      display: grid;
+      grid-column: full;
+      flex-shrink: 0;
+      overflow-inline: auto;
+      grid-auto-columns: min(80%, 400px);
+      grid-auto-flow: column;
+      padding: max(1rem, 50% - 1200px /2);
+      gap: 20px;
+    }
+    .card {
+      padding: 30px 20px;
+      border-radius: var(--border-radius-0);
+      background-color: var(--color-neutrals-200);
+    }
+  }
+</style>
