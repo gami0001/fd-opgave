@@ -9,7 +9,9 @@ const {
 
 <button
   type={type}
-  class={`btn ${variant === "yellow" ? "btn-yellow" : ""}`}
+  class={`btn 
+    ${variant === "yellow" ? "btn-yellow" : ""} 
+    ${variant === "dark" ? "btn-dark" : ""}`}
   {...props}
 >
   {text}
@@ -41,6 +43,28 @@ const {
           #000 20%
         );
       }
+    }
+
+  .btn.btn-dark {
+  background-color: var(--color-neutrals-900);
+  color: var(--color-neutrals-50);
+
+  &:hover {
+    background-color: color-mix(
+      in oklab,
+      var(--color-neutrals-900),
+      #fff 15%
+    );
+  }
+
+  &:active {
+    background-color: color-mix(
+      in oklab,
+      var(--color-neutrals-900),
+      #fff 25%
+    );
+  }
+}
     }
 
     .btn-yellow {
