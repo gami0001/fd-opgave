@@ -9,7 +9,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 <article class="CaseArticle">
   <header>
     <div class="Dynamic_picture">
-      <DynamicImage imagePath={image} altText={caseName} />
+      <img src="/images/caseimg.webp" />
     </div>
     <div class="case-details">
       <div>
@@ -52,14 +52,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
             ))}
           </ul>
         )}
-        {section.image && (
-          <DynamicImage
-            imagePath={section.image}
-            altText={section.title}
-            width={600}
-            height={400}
-          />
-        )}
+        {section.image && <img src="/images/storyboard.webp" />}
       </section>
     ))
   }
