@@ -3,11 +3,9 @@ import employees from "../data/employees.json";
 import Layout from "@layouts/Layout.astro";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import Faq from "@components/Faq.astro";
-import ExpectCard from "@components/WhatToExpect.astro";
 import Vision from "@components/OurVision.astro";
 import Banner from "@components/Banner.astro";
 import ButtonLink from "@components/ButtonLink.astro";
-import FinancialTools from "@components/FinancialTools.astro";
 
 const onlyTwo = employees.slice(0, 2);
 ---
@@ -19,6 +17,7 @@ const onlyTwo = employees.slice(0, 2);
     text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
   />
 
+  <Vision />
   <section class="our-team">
     <div class="team-wrapper">
       <div class="team-grid">
@@ -41,9 +40,6 @@ const onlyTwo = employees.slice(0, 2);
   </section>
 
   <Faq />
-  <ExpectCard />
-  <Vision />
-  <FinancialTools />
 </Layout>
 
 <style>
