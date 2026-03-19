@@ -92,11 +92,27 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
     padding: 54px 60px;
     border-radius: var(--border-radius-01);
+
+    width: min(1000px, 90vw);
+    margin: 0 auto;
+    dt {
+      font-size: var(--step-0);
+      font-weight: 600;
+    }
+
+    dd {
+      font-size: var(--step--1);
+    }
   }
 
   .CaseStudy_text {
     --flow-space: var(--space-m);
     padding: 0 5rem 0 5rem;
+
+    line-height: 1.5em;
+
+    max-width: 950px;
+    margin: 0 auto;
 
     > * + * {
       margin-top: var(--flow-space);
@@ -105,25 +121,34 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
     h2 {
       padding-top: 5rem;
       --flow-space: var(--space-xl);
-      font-size: var(--step-2);
+      font-size: var(--step-3);
+      font-weight: 600;
     }
 
     h3 {
       --flow-space: var(--space-m);
-      font-size: var(--step-1);
+      font-size: var(--step-2);
+      font-weight: 600;
     }
 
     p {
       --flow-space: var(--space-s);
+      color: var(--color-neutrals-700);
     }
 
     ul {
       --flow-space: var(--space-s);
+      color: var(--color-neutrals-700);
+      margin-bottom: var(--space-xl);
+    }
+
+    li {
+      margin-bottom: var(--space-xs);
     }
   }
 
   .CaseStudy_text :global(img) {
-    padding-bottom: var(--space-l);
-    border-radius: var(--border-radius-0);
+    padding-block: var(--space-l);
+    margin: 0 auto;
   }
 </style>
