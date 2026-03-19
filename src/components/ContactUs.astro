@@ -8,8 +8,8 @@ import Pin from "../icons/pin.svg";
   <div class="container">
     <div>
       <p class="first-p">PROCESS</p>
-      <h2>Contact Us. It´s Easy.</h2>
-      <p>
+      <h2>Contact Us. It's Easy.</h2>
+      <p class="more_info">
         Leverage agile frameworks to provide a robust synopsis for high level
         overviews. Iterative approaches to corporate strategy foster
         collaborative.
@@ -56,13 +56,29 @@ import Pin from "../icons/pin.svg";
   @layer component {
     .contact {
       grid-column: content-start / content-end;
-      margin-bottom: 100px;
+      padding-block: 8rem;
 
       .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
         align-items: center;
+
+        .first-p {
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          font-size: var(--step-3);
+          font-weight: 600;
+          margin-bottom: var(--space-xs);
+        }
+
+        .more_info {
+          max-width: 40ch;
+          color: var(--color-neutrals-700);
+        }
       }
 
       .contact-info {
@@ -71,6 +87,15 @@ import Pin from "../icons/pin.svg";
         gap: 1rem;
         align-items: center;
         margin-top: 1.5rem;
+
+        :first-child {
+          color: var(--color-neutrals-700);
+        }
+
+        :last-child {
+          font-size: var(--step--1);
+          font-weight: 600;
+        }
       }
 
       .phone {
